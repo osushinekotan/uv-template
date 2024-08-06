@@ -1,0 +1,14 @@
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - {{ cookiecutter.port }}:{{ cookiecutter.port }}
+    tty: true
+    env_file:
+      - ./.env
+    environment:
+      - PYTHONPATH=/workspace/src
