@@ -1,0 +1,22 @@
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - 8080:8080
+    tty: true
+    env_file:
+      - ./.env
+    environment:
+      - PYTHONPATH=/workspace/src
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
