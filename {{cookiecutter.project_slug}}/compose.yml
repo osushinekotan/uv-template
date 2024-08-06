@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/workspace
     ports:
-      - 8080:8080
+      - {{ cookiecutter.port }}:{{ cookiecutter.port }}
     tty: true
     env_file:
       - ./.env
