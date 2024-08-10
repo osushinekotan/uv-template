@@ -20,3 +20,4 @@ services:
           devices:
           - driver: nvidia
             capabilities: [gpu]
+    shm_size: 8gb

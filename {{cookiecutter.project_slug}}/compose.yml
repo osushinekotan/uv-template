@@ -12,3 +12,4 @@ services:
       - ./.env
     environment:
       - PYTHONPATH=/workspace/src
+    shm_size: 8gb
