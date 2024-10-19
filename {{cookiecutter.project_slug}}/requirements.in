@@ -1,5 +1,0 @@
-mypy
-ruff
-pre-commit
-pytest
-ipykernel
