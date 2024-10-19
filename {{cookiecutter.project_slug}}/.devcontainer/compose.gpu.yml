@@ -1,15 +1,13 @@
 services:
   workspace:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
     volumes:
-      - .:/workspace
-    ports:
-      - {{ cookiecutter.port }}:{{ cookiecutter.port }}
+      - ../:/workspace
     tty: true
     env_file:
-      - ./.env
+      - ../.env
     environment:
       - PYTHONPATH=/workspace/src
       - NVIDIA_VISIBLE_DEVICES=all
@@ -18,6 +16,6 @@ services:
       resources:
         reservations:
           devices:
-          - driver: nvidia
-            capabilities: [gpu]
+            - driver: nvidia
+              capabilities: [ gpu ]
     shm_size: 8gb

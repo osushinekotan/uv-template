@@ -1,7 +1,7 @@
 {
   "name": "{{ cookiecutter.project_slug }}",
   "dockerComposeFile": [
-    "../compose{%- if cookiecutter.use_gpu == 'y' %}.gpu{%- endif %}.yml"
+    "./compose{%- if cookiecutter.use_gpu == 'y' %}.gpu{%- endif %}.yml"
   ],
   "service": "workspace",
   "workspaceFolder": "/workspace",
@@ -9,8 +9,7 @@
     "TZ": "Asia/Tokyo"
   },
   "features": {
-    "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
   },
   "postCreateCommand": "sh .devcontainer/PostCreateCommand.sh"
 }

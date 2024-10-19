@@ -1,15 +1,13 @@
 services:
   workspace:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
     volumes:
-      - .:/workspace
-    ports:
-      - {{ cookiecutter.port }}:{{ cookiecutter.port }}
+      - ../:/workspace
     tty: true
     env_file:
-      - ./.env
+      - ../.env
     environment:
       - PYTHONPATH=/workspace/src
     shm_size: 8gb
