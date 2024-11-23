@@ -72,12 +72,3 @@ repos:
     rev: 0.6.1
     hooks:
       - id: nbstripout
-
-  # sql linter and formatter
-  - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 2.3.5
-    hooks:
-      - id: sqlfluff-lint
-        entry: sqlfluff lint --processes 0 --ignore=templating
-      - id: sqlfluff-fix
-        entry: sqlfluff fix --force --show-lint-violations --processes 0 --ignore=templating
