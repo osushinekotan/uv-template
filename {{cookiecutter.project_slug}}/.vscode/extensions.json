@@ -11,6 +11,7 @@
     "janisdd.vscode-edit-csv",
     "GitHub.copilot",
     "samuelcolvin.jinjahtml",
-    "ms-azuretools.vscode-docker"
+    "ms-azuretools.vscode-docker",
+    "tamasfe.even-better-toml",
   ]
 }
