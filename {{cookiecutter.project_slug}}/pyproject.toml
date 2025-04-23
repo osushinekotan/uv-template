@@ -24,21 +24,21 @@ lint.select = [
     "W", # pycodestyle warnings
     "I", # isort
     # "D", # pydocstyle
-    "B", # flakes8-bugbear
-    "UP", # pyupgrade
-    "N", # pep8-naming
+    "B",   # flakes8-bugbear
+    "UP",  # pyupgrade
+    "N",   # pep8-naming
     "C90", # mccabe
 ]
-lint.fixable =["ALL"]
+lint.fixable = ["ALL"]
 lint.unfixable = [
-    "F401",  # module imported but unused
-    "F841",  # local variable is assigned to but never used
+    "F401", # module imported but unused
+    "F841", # local variable is assigned to but never used
 ]
 lint.ignore = [
-    "E501",  # line too long
-    "E402",  # module level import not at top of file
-    "N806",  # variable in function should be lowercase
-    "N803",  # argument name should be lowercase
+    "E501", # line too long
+    "E402", # module level import not at top of file
+    "N806", # variable in function should be lowercase
+    "N803", # argument name should be lowercase
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -76,8 +76,9 @@ warn_unused_ignores = false
 disallow_any_generics = false
 
 [[tool.mypy.overrides]]
-module = [
-    "tests.*",
-]
+module = ["tests.*"]
 ignore_errors = true
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
