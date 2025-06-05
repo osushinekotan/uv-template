@@ -25,11 +25,11 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
 
-      - name: Run ruff format
-        run: uv run ruff format .
-
       - name: Run ruff lint
-        run: uv run ruff check . --fix
+        run: uv run ruff check --output-format=github .
+
+      - name: Run ruff format
+        run: uv run ruff format --check --diff
 
       - name: Run mypy
         run: uv run mypy .
