@@ -1,28 +1,59 @@
-# UV Template
+# UV Python Template
 
-cookiecutter を使った python 用のテンプレート
+A modern Python project template using [uv](https://github.com/astral-sh/uv) for dependency management and [Copier](https://copier.readthedocs.io/) for project generation.
 
-## Quickstart
+## Install Copier
 
-- install cookiecutter
+Install Copier using pipx (recommended):
 
-    ```
-    pip install cookiecutter
-    ```
+```bash
+pipx install copier
+```
 
-- project の作成 
-    1. project root directory ごと作成する場合
+Or using pip:
 
-        ```
-        cookiecutter https://github.com/osushinekotan/uv-template.git
-        ```
-    
-    2. 作成済みの project root directory を使いたい場合 (clone した repository など)
+```bash
+pip install copier
+```
 
-        ```
-        cd {project_dir}
-        cookiecutter https://github.com/osushinekotan/uv-template.git -f -o ../
-        ```
+## Generate a Project With Copier
 
-        - `project_slug` と `{projet_dir}` が同じ名前であり、それを上書きする形で template を作成する
-        - cookicutter の [CL options](https://cookiecutter.readthedocs.io/en/1.7.0/advanced/cli_options.html) を使う
+To create a new project from this template:
+
+```bash
+copier copy https://github.com/yourusername/uv-template my-project
+```
+
+For local development:
+
+```bash
+copier copy /path/to/uv-template my-project
+```
+
+## Input Variables
+
+When generating a project, Copier will prompt you for the following variables:
+
+- **project_name**: Your project's display name (default: "My Awesome Project")
+- **project_slug**: Directory name for your project (auto-generated from project_name)
+- **project_source**: Python package name (auto-generated from project_slug)
+- **python_version**: Python version to use (choices: 3.9, 3.10, 3.11, 3.12; default: 3.11)
+- **use_gpu**: Whether to include GPU support configuration (default: false)
+
+## Update an Existing Project
+
+To update a project with the latest template changes:
+
+```bash
+copier update
+```
+
+## Features
+
+- 📦 Modern dependency management with [uv](https://github.com/astral-sh/uv)
+- 🐍 Python 3.9+ support
+- 🔧 Pre-configured development tools (ruff, mypy, pre-commit)
+- 🐳 Dev container support with optional GPU
+- 🧪 Testing setup with pytest
+- 📓 Jupyter notebook support
+- 🔄 GitHub Actions CI/CD
