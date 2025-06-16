@@ -1,0 +1,36 @@
+# Copier configuration
+_templates_suffix: .jinja
+_envops:
+  block_start_string: "{%"
+  block_end_string: "%}"
+  variable_start_string: "{{"
+  variable_end_string: "}}"
+  comment_start_string: "{#"
+  comment_end_string: "#}"
+  keep_trailing_newline: true
+
+# Questions
+project_name:
+  type: str
+  default: My Awesome Project
+  help: What is your project name?
+
+project_slug:
+  type: str
+  default: "{{ project_name.lower().replace(' ', '-').replace('_', '-').replace('.', '-').strip() }}"
+  help: Project slug (used for folder name)
+
+project_source:
+  type: str
+  default: "{{ project_slug.replace('-', '_') }}"
+  help: Python package name
+
+python_version:
+  type: str
+  default: "3.11"
+  help: Python version
+  choices:
+    - "3.9"
+    - "3.10"
+    - "3.11"
+    - "3.12"
